@@ -9,13 +9,13 @@ abstract class ApiServise{
   factory ApiServise(Dio dio, {String baseUrl}) = _ApiServise;
 
   @POST("/login")
-  Future<void> sendVerificationCode(Map<String, dynamic> body);
+  Future<void> sendVerificationCode(@Body() Map<String, dynamic> body);
 
   @POST("/confirm_code")
-  Future<void> confirmCode( Map<String, dynamic> body);
+  Future<void> confirmCode(@Body() Map<String, dynamic> body);
 
   @POST("/refresh_token")
-  Future<void> refreshToken(Map<String, dynamic> body);
+  Future<void> refreshToken(@Body()Map<String, dynamic> body);
 
   @GET("/auth")
   Future<String> getUserId();

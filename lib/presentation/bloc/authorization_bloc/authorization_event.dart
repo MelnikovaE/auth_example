@@ -3,6 +3,8 @@ part of 'authorization_bloc.dart';
 @immutable
 sealed class AuthorizationEvent {}
 
+//class OpenLoginFormEvent extends AuthorizationEvent{}
+
 class SendEmailEvent extends AuthorizationEvent{
   final String email;
 
