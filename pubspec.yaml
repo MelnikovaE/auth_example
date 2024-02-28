@@ -1,0 +1,40 @@
+name: auth_example
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.1.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  #для валидации поля
+  email_validator: ^2.1.17
+  #для управления состоянием
+  flutter_bloc: ^8.1.4
+  #для проверки подключения к интернет
+  connectivity_plus: ^5.0.2
+  #
+  dio: ^5.4.1
+  retrofit: ^4.1.0
+  retrofit_generator: ^8.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  #
+  build_runner: ^2.4.8
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/googleLogo.png
+    - assets/images/packOnlineShopping.png
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
