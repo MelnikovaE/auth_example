@@ -12,11 +12,12 @@ abstract class ApiServise{
   Future<void> sendVerificationCode(@Body() Map<String, dynamic> body);
 
   @POST("/confirm_code")
-  Future<void> confirmCode(@Body() Map<String, dynamic> body);
+  Future<String> confirmCode(@Field("email") String email, @Field("code") int code);
 
   @POST("/refresh_token")
-  Future<void> refreshToken(@Body()Map<String, dynamic> body);
+  Future<String> refreshToken(@Field("rt") String rt,);
 
   @GET("/auth")
-  Future<String> getUserId();
+  Future<String> getUserId(@Header("Auth") String bearer_jwt);
 }
+

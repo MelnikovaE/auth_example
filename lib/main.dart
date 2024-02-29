@@ -29,7 +29,7 @@ class MainApp extends StatelessWidget {
                 ));
               }
             },
-            child:  AuthorizationPage()),
+            child: AuthorizationPage()),
       ),
     );
   }

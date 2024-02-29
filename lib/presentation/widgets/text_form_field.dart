@@ -3,10 +3,10 @@ import 'package:auth_example/core/style_text.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
-class MyTextFormField extends StatelessWidget {
+class CustomTextFormField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
-  const MyTextFormField(
+  const CustomTextFormField(
       {super.key,
       required this.controller,
       required this.hintText,});

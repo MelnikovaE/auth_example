@@ -46,13 +46,18 @@ class _ApiServise implements ApiServise {
   }
 
   @override
-  Future<void> confirmCode(Map<String, dynamic> body) async {
+  Future<String> confirmCode(
+    String email,
+    int code,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _data = {
+      'email': email,
+      'code': code,
+    };
+    final _result = await _dio.fetch<String>(_setStreamType<String>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -68,16 +73,17 @@ class _ApiServise implements ApiServise {
           _dio.options.baseUrl,
           baseUrl,
         ))));
+    final value = _result.data!;
+    return value;
   }
 
   @override
-  Future<void> refreshToken(Map<String, dynamic> body) async {
+  Future<String> refreshToken(String rt) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _data = {'rt': rt};
+    final _result = await _dio.fetch<String>(_setStreamType<String>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -93,13 +99,16 @@ class _ApiServise implements ApiServise {
           _dio.options.baseUrl,
           baseUrl,
         ))));
+    final value = _result.data!;
+    return value;
   }
 
   @override
-  Future<String> getUserId() async {
+  Future<String> getUserId(String bearer_jwt) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Auth': bearer_jwt};
+    _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<String>(_setStreamType<String>(Options(
       method: 'GET',

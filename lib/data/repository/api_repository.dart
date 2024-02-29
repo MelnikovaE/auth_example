@@ -10,11 +10,12 @@ class ApiRepository {
   Future<void> sendVerificationCode(Map<String, dynamic> body) =>
       _apiService.sendVerificationCode(body);
 
-  Future<void> confirmCode(Map<String, dynamic> body) =>
-      _apiService.confirmCode(body);
+  Future<String> confirmCode(String email, int code) =>
+      _apiService.confirmCode(email, code);
 
-  Future<void> refreshToken(Map<String, dynamic> body) =>
-      _apiService.refreshToken(body);
+  Future<String> refreshToken(String rt) =>
+      _apiService.refreshToken(rt);
 
-  Future<String> getUserId() => _apiService.getUserId();
+  Future<String> getUserId(String bearerJwt) =>
+      _apiService.getUserId(bearerJwt);
 }

@@ -1,24 +1,27 @@
 part of 'authorization_bloc.dart';
 
-enum Status{sending,success,error}
-
 @immutable
 sealed class AuthorizationState {}
 
 final class AuthorizationInitialState extends AuthorizationState {}
 
-//В момент отправки почты
-final class SendingEmailState extends AuthorizationState {
-    final status = Status.sending;
+//В момент отправки запроса
+final class SendingState extends AuthorizationState {}
+
+//Успешный вход в аккаунт 
+final class SuccessLoginState extends AuthorizationState {
+  final String id;
+  SuccessLoginState({required this.id});
 }
 
-//Успешная отправка почты
+//Успешная отправка почты для авторизации
 final class SuccessSendingEmailState extends AuthorizationState {
-   final status = Status.success;
+  final String email;
+  SuccessSendingEmailState({required this.email});
 }
 
-//Ошибка при отправке почты
-final class ErrorSendingEmailState extends AuthorizationState {
-  final status = Status.error;
-
+//Ошибка при отправке/подтверждении
+final class ErrorState extends AuthorizationState {
+  final String text;
+  ErrorState({required this.text});
 }
