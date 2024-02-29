@@ -15,7 +15,7 @@ abstract class ApiServise{
   Future<String> confirmCode(@Field("email") String email, @Field("code") int code);
 
   @POST("/refresh_token")
-  Future<String> refreshToken(@Field("rt") String rt,);
+  Future<String> refreshToken(@Field("token") String rt,);
 
   @GET("/auth")
   Future<String> getUserId(@Header("Auth") String bearer_jwt);

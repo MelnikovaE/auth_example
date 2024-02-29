@@ -83,7 +83,7 @@ class _LoginFormState extends State<LoginForm> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'images/googleLogo.png',
+                    'assets/images/googleLogo.png',
                     height: 30,
                   ),
                   Text(

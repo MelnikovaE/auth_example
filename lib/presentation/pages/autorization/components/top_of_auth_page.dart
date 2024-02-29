@@ -29,7 +29,7 @@ class TopOfAuthPage extends StatelessWidget {
         ),
         const SizedBox(height: 25),
         Image.asset(
-          'images/packOnlineShopping.png',
+          'assets/images/packOnlineShopping.png',
           height: height > 750 ? 280 : 130,
         ),
         const SizedBox(height: 15),

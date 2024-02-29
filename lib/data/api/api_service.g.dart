@@ -82,7 +82,7 @@ class _ApiServise implements ApiServise {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = {'rt': rt};
+    final _data = {'token': rt};
     final _result = await _dio.fetch<String>(_setStreamType<String>(Options(
       method: 'POST',
       headers: _headers,
